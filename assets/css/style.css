@@ -1,0 +1,52 @@
+body {
+    background-image: url("../images/bg_img.png");
+}
+
+.main-title,
+h4 {
+  font-family: "Codystar", cursive;
+  text-align: center;
+  color: #fff;
+  background-color: #212529;
+}
+
+#jambotron {
+    background-color: #212529;
+}
+
+.main-title {
+    font-size: 60px;
+}
+
+h4 {
+    padding: 10px;
+}
+
+.card-body {
+    border: 2px solid #000;
+    /* border-radius: 4px; */
+    background-color: #212529;
+    color: #fff;
+}
+
+thead,
+tbody {
+    text-align: center;
+}
+
+label {
+    margin: 0px 0px 5px 20px;
+    /* background-color: #212529;
+    color: #fff; */
+}
+
+.form-control {
+    width: 97%;
+    margin: 0px auto;
+   
+}
+
+#add-train {
+    width: 200px;
+    margin: 10px 1px;
+}
