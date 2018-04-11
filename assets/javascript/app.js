@@ -52,6 +52,7 @@ $(document).ready(function() {
     var addDest = childSnapshot.val().dest;
     var addTime = childSnapshot.val().time;
     var addFreq = childSnapshot.val().freq;
+   
 
     // new train info
     console.log(addName);
@@ -59,12 +60,28 @@ $(document).ready(function() {
     console.log(addTime);
     console.log(addFreq);
 
-    // precious moment variables
-    var convertedTime = moment(addTime);
-    var newTime = moment(convertedTime).format("HH:mm");
+    // precious moments
+    var firstTime = "04:30";
+    var initialConvert = moment(firstTime, "HH:mm").subtract(1, "years");
+    console.log(initialConvert);
+
+    var currentTime = moment();
+    console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+
+    var diffTime = moment().diff(moment(initialConvert), "minutes");
+    console.log("Difference in time: " + diffTime);
+
+    var tRemain = diffTime % addFreq;
+    console.log(tRemain);
+
+    var tMinsTilTrain = addFreq - tRemain;
+    console.log("Minutes til train: " + tMinsTilTrain);
+
+    var nextTrain = moment().add(tMinsTilTrain, "minutes").format("hh:mm");
+    console.log("Arrival time: " + moment(nextTrain).format("hh:mm"));
 
     // adding to current schedule
-     $("#add-train-data").append("<tr><td>" + addName + "</td><td>" + addDest + "</td><td>" + newTime + "</td><td>" + addFreq + "</td></tr>");
+     $("#add-train-data").append("<tr><td>" + addName + "</td><td>" + addDest + "</td><td>" + addFreq + "</td><td>" + nextTrain + "</td><td>" + tMinsTilTrain +"</td></tr>");
 
   
   }, function (errorObject) {
