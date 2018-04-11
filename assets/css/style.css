@@ -3,11 +3,17 @@ body {
 }
 
 .main-title,
-h4 {
+h4,
+h3 {
   font-family: "Codystar", cursive;
   text-align: center;
   color: #fff;
   background-color: #212529;
+}
+
+.main-title,
+h3 {
+    margin: 0px;
 }
 
 #jambotron {
@@ -15,16 +21,24 @@ h4 {
 }
 
 .main-title {
-    font-size: 60px;
+    font-size: 80px;
 }
 
 h4 {
     padding: 10px;
+    
+}
+
+h3 {
+    font-size: 40px;
+}
+
+#table-body {
+    margin: 0px 0px 35px 0px;
 }
 
 .card-body {
     border: 2px solid #000;
-    /* border-radius: 4px; */
     background-color: #212529;
     color: #fff;
 }
@@ -46,7 +60,8 @@ label {
    
 }
 
+/* submit button */
 #add-train {
     width: 200px;
-    margin: 10px 1px;
+    margin: 10px 0px;
 }
