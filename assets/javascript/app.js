@@ -35,7 +35,7 @@ $(document).ready(function() {
     console.log(addTrain.time);
     console.log(addTrain.freq);
 
-    alert("New train successfully added... CHOO! CHOO!");
+    // alert("New train successfully added... CHOO! CHOO!");
 
     // Clears all of the text-boxes
     $("#name-input").val("");
@@ -63,22 +63,22 @@ $(document).ready(function() {
     // precious moments
     var firstTime = "04:30";
     var initialConvert = moment(firstTime, "HH:mm").subtract(1, "years");
-    console.log(initialConvert);
+    // console.log(initialConvert);
 
     var currentTime = moment();
-    console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+    // console.log("Current Time: " + moment(currentTime).format("hh:mm"));
 
     var diffTime = moment().diff(moment(initialConvert), "minutes");
-    console.log("Difference in time: " + diffTime);
+    // console.log("Difference in time: " + diffTime);
 
     var tRemain = diffTime % addFreq;
-    console.log(tRemain);
+    // console.log(tRemain);
 
     var tMinsTilTrain = addFreq - tRemain;
-    console.log("Minutes til train: " + tMinsTilTrain);
+    // console.log("Minutes til train: " + tMinsTilTrain);
 
     var nextTrain = moment().add(tMinsTilTrain, "minutes").format("hh:mm");
-    console.log("Arrival time: " + moment(nextTrain).format("hh:mm"));
+    // console.log("Arrival time: " + moment(nextTrain).format("hh:mm"));
 
     // adding to current schedule
      $("#add-train-data").append("<tr><td>" + addName + "</td><td>" + addDest + "</td><td>" + addFreq + "</td><td>" + nextTrain + "</td><td>" + tMinsTilTrain +"</td></tr>");
